@@ -1,0 +1,266 @@
+// Import bootstrap 
+@import "../js/assets/bootstrap/less/bootstrap.less";
+
+// Import font awesome, we only use font awesome and doesn't use bootstrap glyph
+@import "font-awesome.css";
+
+// ===== Primary Styles ===========================================================================
+// Author: Akbar Khrisna (Pinest Design - http://twitter.com/pinestdesign - pinestdesign@gmail.com)
+// 13 September 2014
+// Info: Main styling for HSBDG Site.
+// Note: All styling by default is for MOBILE, then we gradually style it for bigger devices
+//		 on responsive.hs.less
+// ================================================================================================
+
+
+// heading styling
+h1, h2, h3 {
+	font-family: @font-family-heading;
+}
+
+// html
+html, body {
+	height: 100%;
+}
+
+// body
+body {
+
+	// font smoothing
+	-moz-osx-font-smoothing : grayscale;
+	-webkit-font-smoothing: grayscale;
+	
+	// wrapper
+	// do not style 'id (#)' in CSS
+	.wrapper {
+		background: url('../img/bg-home.jpg') no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+		min-height: 480px;
+		
+		// hue
+		.hue {
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			background: rgba(255,127,0,0.5);
+			
+			// header
+			header {
+				.clearfix;
+	
+				// logo
+				.logo {
+					margin: 20px 0 0 0;
+					
+					// anchor
+					a {
+						background: url('../img/logo.png');
+						width: 47px;
+						height: 116px;
+						display: block;
+					}
+				}
+	
+				// menu
+				.menu {
+					ul {
+						margin:75px 0 0 0;
+						padding: 0px;
+						
+						li {
+							list-style: none;
+							float: right;
+							margin: 0 0px 0 20px;
+							
+							a {
+								color: #fff;
+								.opacity(0.7);
+								font-size: 2em;
+								.transition(all 0.3s);
+								
+								&:hover {
+									.opacity(0.9);
+								}
+							}
+						}
+					}
+				}
+			}
+	
+			// homescreen splash
+			.splash {
+				text-align: center;
+				margin-top:40px;
+				
+				// head
+				h1 {
+					font-size:2.5em;
+					line-height: 1.3em;
+				}
+				
+				// tuned
+				.tuned {
+					font-family: @font-family-heading;
+					font-size: 1.5em;
+					margin: 20px 0 0 0;
+					
+					.line {
+						width: 100px;
+						height: 2px;
+						background: #fff;
+						display: block;
+						.opacity(0.3);
+						margin: 0 auto;
+						margin-bottom: 15px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// animation
+// standard CSS3
+@keyframes fadein {
+    0% { opacity: 0; }
+    100%   { opacity: 1; }
+}
+
+// firefox
+@-moz-keyframes fadein {
+    0% { opacity: 0; }
+    100%   { opacity: 1; }
+}
+
+// webkit
+@-webkit-keyframes fadein {
+    0% { opacity: 0; }
+    100%   { opacity: 1; }
+}
+
+// ie
+@-ms-keyframes fadein {
+    0% { opacity: 0; }
+    100%   { opacity: 1; }
+}
+
+// opera
+@-o-keyframes fadein {
+    0% { opacity: 0; }
+    100%   { opacity: 1; }
+}
+
+// webkit
+@-webkit-keyframes fadeInUp { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
+
+// standard CSS3
+@keyframes fadeInUp { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+
+// styles
+.fadeInUp { 
+    -webkit-animation-name: fadeInUp; 
+    animation-name: fadeInUp; 
+}
+
+// style class
+.animated { 
+    -webkit-animation-duration: 0.5s; 
+    animation-duration: 0.5s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+	-webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+    animation-delay: 1s;
+	-moz-animation-delay: 1s;
+    -ms-animation-delay: 1s;
+    -o-animation-delay: 1s;
+} 
+
+// style class
+.animated2 { 
+    -webkit-animation-duration: 2s; 
+    animation-duration: 2s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+	-webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+    animation-delay: 1s;
+	-moz-animation-delay: 1s;
+    -ms-animation-delay: 1s;
+    -o-animation-delay: 1s;
+}
+
+// Adaptive
+// Small devices (tablets, 768px and up)
+@media (min-width: @screen-sm-min) {
+	
+	// body
+	body {
+		
+		// wrapper
+		.wrapper {
+			
+			// hue
+			.hue {
+				
+				// homescreen splash
+				.splash {
+					position: absolute;
+					top:50%;
+					left: 20px;
+					right: 20px;
+					margin-top: -100px;
+					
+					// head
+					h1 {
+						font-size:3.1em;
+					}
+				}
+			}
+		}
+	}
+}
+
+// responsive
+// Small devices (tablets, 992px and up)
+@media (min-width: @screen-md-min) {
+	
+	// body
+	body {
+		
+		// wrapper
+		.wrapper {
+			
+			// hue
+			.hue {
+				
+				// homescreen splash
+				.splash {
+					
+					// head
+					h1 {
+						font-size:3.5em;
+					}
+				}
+			}
+		}
+	}
+}
